@@ -24,9 +24,9 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
            <!--  nav here -->
-           <a class="navbar-brand" href="<%= 'user#show' %>"/>Hello</a>
-           <a class="navbar-brand" href="<%= attractions_path %>"/>See Attractions</a>
-           <a class="navbar-brand" href="<%= logout_path %>"/>Log Out</a>
+           <!-- <a class="navbar-brand" href="<%= 'user_path' %>"/>Hello</a> -->
+           <%= link_to "See attractions", attractions_path %>
+           <%= link_to "Log Out", logout_path %>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -34,6 +34,7 @@
 
     <!-- content -->
     <div class="container"  role="main">
+      <%= flash[:message] %>
       <%= yield %>
     </div>
 

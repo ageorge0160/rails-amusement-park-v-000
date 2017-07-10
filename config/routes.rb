@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   resources :users
   resources :attractions
 
-  get 'users/new', to: 'users#new'
-  get 'signin', to: 'users#signin'
-  post 'logout', to: 'sessions#destroy'
+  get 'signup', to: 'users#new'
+  get 'signin', to: 'sessions#new'
+  post 'signin', to: 'sessions#create'
+  get 'logout', to: 'sessions#destroy'
+
+  post 'ride/:id', to: 'attractions#ride', as: :ride
 end
